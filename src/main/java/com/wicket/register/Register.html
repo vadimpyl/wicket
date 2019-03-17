@@ -1,0 +1,46 @@
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <title>Wicket Examples - Register</title>
+</head>
+<body>
+
+<h2>Please register here!</h2>
+<span wicket:id="message">message will be replace later</span>
+
+
+<form wicket:id="registerForm">
+    <dl>
+        <dt>Login:</dt>
+        <dd><input wicket:id="login" type="text" size="30"/></dd>
+        <dt>First name:</dt>
+        <dd><input wicket:id="firstName" type="text" size="30"/></dd>
+        <dt>Last name:</dt>
+        <dd><input wicket:id="lastName" type="text" size="30"/></dd>
+        <dt>Birthday:</dt>
+        <dd><input wicket:id="birthday" type="text"/></dd>
+        <dt>Postal Code:</dt>
+        <dd><input wicket:id="postalCode" type="text" size="30"/></dd>
+        <dt>Birth City:</dt>
+        <dd><input wicket:id="birthCity" type="text" size="30"/></dd>
+        <dt>Birth Country:</dt>
+        <dd><input wicket:id="birthCountry" type="text" size="30"/></dd>
+
+        <dt>Password:</dt>
+        <dd><input wicket:id="password" type="password" size="30"/></dd>
+
+        <dt>Confirm Password:</dt>
+        <dd><input wicket:id="confirmPassword" type="password" size="30"/></dd>
+
+
+        <dd>
+            <input type="submit" name="submit" value="Sign In"/>
+        </dd>
+    </dl>
+</form>
+
+<div id="feedbackPanel">
+    <span wicket:id="feedback"/>
+</div>
+
+</body>
+</html>

@@ -1,10 +1,14 @@
 package com.wicket.model;
 
+import org.apache.wicket.util.io.IClusterable;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
-public class User
+public class User implements IClusterable
 {
+    private long id;
     private String login;
     private String firstName;
     private String lastName;
@@ -13,8 +17,8 @@ public class User
     private String birthCountry;
     private String password;
 
-    public User(String login, String firstName, String lastName, Date birthDate, String birthCity, String birthCountry, String password)
-    {
+    public User(long id, String login, String firstName, String lastName, Date birthDate, String birthCity, String birthCountry, String password) {
+        this.id = id;
         this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -22,6 +26,14 @@ public class User
         this.birthCity = birthCity;
         this.birthCountry = birthCountry;
         this.password = password;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getLogin() {
