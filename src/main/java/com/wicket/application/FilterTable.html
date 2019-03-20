@@ -1,0 +1,16 @@
+<html xmlns:wicket="http://wicket.apache.org">
+
+<h2>Welcome filter table, <span wicket:id="userName">userName</span>.    <wicket:link><a href="SignOut.html">Sign Out</a></wicket:link>
+</h2>
+<form wicket:id="filterForm">
+    <fieldset style="display: inline-block;">
+        <legend>Born date</legend>
+        <span style="float: right;">from: <input wicket:id="dateFrom"/></span> <br/>
+        <span style="float: right;">to: <input wicket:id="dateTo"/></span>
+    </fieldset>
+    <div style="overflow-x:auto;">
+        <table class="dataview" cellspacing="0" wicket:id="table">[table]</table>
+    </div>
+</form>
+
+</html>

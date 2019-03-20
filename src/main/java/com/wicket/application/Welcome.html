@@ -1,14 +1,21 @@
 <html xmlns:wicket="http://wicket.apache.org">
-<head>
-    <title>Wicket Examples - signin</title>
-</head>
-<body>
+<wicket:head>
+    <style type="text/css">
+        th.last-name *, td.last-name {
+            font-weight: bold;
+            color: #AA0000;
+        }
+        th.numeric, td.numeric {
+            text-align: right !important;
+        }
+    </style>
+</wicket:head>
 
     <h2>Welcome, <span wicket:id="userName">userName</span>.    <wicket:link><a href="SignOut.html">Sign Out</a></wicket:link>
     </h2>
 
-    <div style="overflow-x:auto;">
-        <table class="dataview" cellspacing="0" wicket:id="table">[table]</table>
-    </div>
-</body>
+    <button wicket:id = "filter">Filter table</button>
+    <button wicket:id = "edit">Edit table</button>
+
+
 </html>

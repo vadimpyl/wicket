@@ -76,6 +76,10 @@ public class User implements IClusterable
         return date;
     }
 
+    public Date getBirthDateDate() {
+        return birthDate;
+    }
+
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
