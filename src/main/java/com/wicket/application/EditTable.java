@@ -43,9 +43,6 @@ public class EditTable extends BasePage
                 // for simplicity we only show the first 10 contacts
                 SortParam<String> sort = new SortParam<>("firstName", true);
                 Iterator<User> contacts = UserHelper.listOfUsers().iterator();
-//                        DatabaseLocator.getDatabase()
-//                        .find(0, 10, sort)
-//                        .iterator();
 
                 // the iterator returns contact objects, but we need it to
                 // return models, we use this handy adapter class to perform

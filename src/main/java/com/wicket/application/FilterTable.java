@@ -62,9 +62,9 @@ public class FilterTable extends WebPage implements AuthenticatedWebPage
 
         add(filterForm);
         FilterToolbar filterToolbar = new FilterToolbar(dataTable, filterForm);
-        dataTable.addTopToolbar(filterToolbar);
+        //dataTable.addTopToolbar(filterToolbar);
         //dataTable.addTopToolbar(new NavigationToolbar(dataTable));
-        dataTable.addTopToolbar(new HeadersToolbar<>(dataTable, dataProvider));
+        //dataTable.addTopToolbar(new HeadersToolbar<>(dataTable, dataProvider));
         filterForm.add(dataTable);
     }
 }

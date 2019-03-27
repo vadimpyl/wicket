@@ -1,8 +1,47 @@
 <html xmlns:wicket="http://wicket.apache.org">
+<wicket:head>
+    <style type="text/css">
+        table.dataview {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #0079d6;
+            font-size: 1em;
+            font-family: arial;
+            font: inherit;
+        }
+        body {        table.dataview tr.even {
+            background-color: #ffebcd;
+        }
+        table.dataview tr.odd {
+            background-color: #fff;
+        }
+            line-height: 1.5em;
+        }
+        th {
+            color: black;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 8px;
+            padding-right: 30px;
+            background-color: #c1e4ff;
+            border-bottom: 1px solid #0079d6;
+            border-top: 1px solid #0079d6;
+            text-align: left;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+        th.numeric, td.numeric {
+            text-align: right !important;
+        }
+        table.dataview tr.even {
+            background-color: #ffebcd;
+        }
+        table.dataview tr.odd {
+            background-color: #fff;
+        }
+    </style>
+</wicket:head>
+<h2>Welcome, <span wicket:id="userName">userName</span>.    <wicket:link><a href="SignOut.html">Sign Out</a></wicket:link></h2>
 
-<h2>Welcome to Repeater View Examples</h2>
-
-    <p><wicket:link><a href="Index.html">[go back]</a></wicket:link></p>
 
     <span style="display: block; border: 1px solid black;">
 Selected Contact: <span wicket:id="selectedLabel">[selected contact]</span>
