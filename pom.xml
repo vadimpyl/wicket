@@ -10,33 +10,30 @@
 
 	<dependencies>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.wicket/wicket-core -->
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-core</artifactId>
 			<version>8.0.0</version>
 		</dependency>
 
-		<!-- slf4j-log4j -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>LATEST</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-auth-roles</artifactId>
 			<version>8.0.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.wicket/wicket-datetime -->
+
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-extensions</artifactId>
 			<version>8.0.0</version>
 
 		</dependency>
-		<!-- Thanks for using https://jar-download.com -->
-
 
 	</dependencies>
 

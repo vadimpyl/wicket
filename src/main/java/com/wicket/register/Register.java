@@ -24,7 +24,6 @@ public class Register extends WebPage
     {
         final FeedbackPanel feedback = new FeedbackPanel("feedback");
         add(feedback);
-        add(new Label("message", "ReGISTER"));
         add(new RegisterForm("registerForm"));
     }
 
@@ -51,8 +50,6 @@ public class Register extends WebPage
             add(new TextField<>("firstName", new PropertyModel<String>(properties, "firstName"))
                     .setRequired(true));
             add(new TextField<>("lastName", new PropertyModel<String>(properties, "firstName")));
-            //add(new DateTextField("birthday", new PropertyModel<Date>(properties, "birthday"), "dd-MM-yyyy")
-             //       .add(new DatePicker()));
             add(dateField);
             add(new TextField<>("postalCode", new PropertyModel<String>(properties, "postalCode")));
             add(new TextField<>("birthCity", new PropertyModel<String>(properties, "birthCity")));

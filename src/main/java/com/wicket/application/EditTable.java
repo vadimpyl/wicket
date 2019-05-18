@@ -31,22 +31,16 @@ public class EditTable extends BasePage
     {
         form = new Form("form");
         add(new Label("userName", new PropertyModel<>(this, "session.user")));
-
         add(form);
 
-        // create a repeater that will display the list of contacts.
         RefreshingView<User> refreshingView = new RefreshingView<User>("simple")
         {
             @Override
             protected Iterator<IModel<User>> getItemModels()
             {
-                // for simplicity we only show the first 10 contacts
                 SortParam<String> sort = new SortParam<>("firstName", true);
                 Iterator<User> contacts = UserHelper.listOfUsers().iterator();
 
-                // the iterator returns contact objects, but we need it to
-                // return models, we use this handy adapter class to perform
-                // on-the-fly conversion.
                 return new ModelIteratorAdapter<User>(contacts)
                 {
 

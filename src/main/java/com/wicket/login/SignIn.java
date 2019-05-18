@@ -2,33 +2,18 @@ package com.wicket.login;
 
 import com.wicket.helper.SignInSession;
 import com.wicket.register.Register;
-import org.apache.wicket.RestartResponseAtInterceptPageException;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.*;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
-import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
-import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.util.value.ValueMap;
 
 public class SignIn extends WebPage
 {
 
-    Button register = new Button("register") {
-        public void onSubmit() {
-            getRequestCycle().setResponsePage(Register.class);
-
-            info("button1.onSubmit executed");
-        }
-    };
-
     public SignIn()
     {
-        // Create feedback panel and add to panelage
-        add(new FeedbackPanel("feedback"));
-
-        // Add sign-in form to page
         add(new SignInForm("signInForm"));
     }
 
@@ -39,8 +24,6 @@ public class SignIn extends WebPage
     {
         private static final String USERNAME = "username";
         private static final String PASSWORD = "password";
-
-        // El-cheapo model for form
         private final ValueMap properties = new ValueMap();
 
 
@@ -53,19 +36,16 @@ public class SignIn extends WebPage
         public SignInForm(final String id)
         {
             super(id);
-            // Attach textfield components that edit properties map model
             add(new TextField<>(USERNAME, new PropertyModel<String>(properties, USERNAME)));
             add(new PasswordTextField(PASSWORD, new PropertyModel<>(properties, PASSWORD)));
             add(new BookmarkablePageLink<>("register", Register.class));
+            add(new FeedbackPanel("feedback"));
         }
-
         @Override
         public final void onSubmit()
         {
-            // Get session info
             SignInSession session = getMySession();
 
-            // Sign the user in
             if (session.signIn(getUsername(), getPassword()))
             {
                 continueToOriginalDestination();
@@ -73,10 +53,8 @@ public class SignIn extends WebPage
             }
             else
             {
-                // Get the error message from the properties file associated with the Component
                 String errmsg = getString("loginError", null, "Unable to sign you in");
 
-                // Register the error message with the feedback panel
                 error(errmsg);
             }
         }
